@@ -12,9 +12,9 @@ Text: abccba, Index: 5 Length: 6
 
 ## Approach
 
-Before starting to solve this task I can immediately see a naive solution, and potential for a more sophisticated solution.
+Before starting to solve this task I can see a naive solution, and potential for a more sophisticated solution.
 
-The naive solution involves generating all substrings of the input strings, finding the palindromes, sorting by size, finding the unique palindromes and selecting the top 3.
+The naive solution involves generating all substrings of the input strings, finding the palindromes, sorting by size, finding the unique palindromes (and removing the smaller duplicates) and selecting the top 3.
 
 1. Start with naive implementation and write tests
 2. Flesh out test suite and implement command-line app
@@ -22,12 +22,17 @@ The naive solution involves generating all substrings of the input strings, find
 
 ## Setup
 
-The application uses __sbt__ to run.
+The application can be run using __sbt__.
 
+Start an interactive sbt session using:
 ```
-sbt run sqrrqabccbatudefggfedvwhijkllkjihxymnnmzpop
+sbt
 ```
-
+Then to run:
+```
+run sqrrqabccbatudefggfedvwhijkllkjihxymnnmzpop
+```
+And to test:
 ```
 sbt test
 ```
