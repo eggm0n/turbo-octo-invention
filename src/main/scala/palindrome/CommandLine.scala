@@ -1,6 +1,6 @@
 package palindrome
 
-object CommandLine extends Palindrome with App {
+object CommandLine extends App with Palindrome {
   if (args.length != 1) {
     println("Please provide input string as a single argument")
   } else {
@@ -17,7 +17,7 @@ object CommandLine extends Palindrome with App {
 }
 
 final case class Result(
-    text: String,
-    index: Int,
-    length: Int
+  text: String,
+  index: Int,
+  length: Int
 )

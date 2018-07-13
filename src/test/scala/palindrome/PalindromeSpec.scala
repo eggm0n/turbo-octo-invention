@@ -18,4 +18,8 @@ class PalindromeSpec extends FlatSpec with Matchers with Palindrome {
   it should "produce a list of the unique palindromes when given an input with multiple non-unique palindromes separated by unique strings" in {
     getPalindromes("123454321x2345432y34543") should be(List("123454321", "y", "x"))
   }
+
+  it should "produce a list of the unique palindromes when given an input with multiple unique palindromes of the same characters" in {
+    getPalindromes("12345543211234543211234321") should be(List("43211234543211234", "5432112345", "1234554321", "1234321"))
+  }
 }

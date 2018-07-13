@@ -5,7 +5,7 @@ trait Palindrome {
   def getPalindromes(input: String): List[String] = {
     val substrings = generateSubstrings(input)
     val palindromes = substrings.filter(isPalindrome)
-    val sortedLongest = palindromes.sortBy(_.length)(Ordering[Int].reverse)
+    val sortedLongest = palindromes.sortBy(x => (x.length, input.indexOf(x)))(Ordering[Tuple2[Int, Int]].reverse)
     val unique = sortedLongest.filter(str => isUnique(sortedLongest, str))
     unique
   }
@@ -21,4 +21,5 @@ trait Palindrome {
 
   private def isUnique(palindromes: List[String], check: String): Boolean =
     palindromes.forall(p => p == check || !p.contains(check))
+
 }
